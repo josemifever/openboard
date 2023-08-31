@@ -281,8 +281,7 @@ public final class KeyboardLayoutSet {
             // TODO: Consolidate those with {@link InputAttributes}.
             params.mEditorInfo = editorInfo;
             params.mIsPasswordField = InputTypeUtils.isPasswordInputType(editorInfo.inputType);
-            params.mNoSettingsKey = InputAttributes.inPrivateImeOptions(
-                    mPackageName, NO_SETTINGS_KEY, editorInfo);
+            params.mNoSettingsKey = true;
 
             // When the device is still unlocked, features like showing the IME setting app need to
             // be locked down.
