@@ -9,7 +9,7 @@ android {
         applicationId "org.dslul.openboard.inputmethod.latin"
         minSdkVersion 19
         targetSdkVersion 31
-        versionCode 19
+        versionCode 20
         versionName '1.4.5'
     }
 
