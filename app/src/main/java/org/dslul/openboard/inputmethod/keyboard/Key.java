@@ -726,8 +726,7 @@ public class Key implements Comparable<Key> {
 
     public final boolean isLongPressEnabled() {
         // We need not start long press timer on the key which has activated shifted letter.
-        return (mActionFlags & ACTION_FLAGS_ENABLE_LONG_PRESS) != 0
-                && (mLabelFlags & LABEL_FLAGS_SHIFTED_LETTER_ACTIVATED) == 0;
+        return false;
     }
 
     public KeyVisualAttributes getVisualAttributes() {
