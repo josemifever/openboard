@@ -1094,6 +1094,8 @@ public final class PointerTracker implements PointerTrackerQueue.Element,
         }
 
         setReleasedKeyGraphics(key, false /* withAnimation */);
+
+        if (true) return; // avoid show hidden features
         final MoreKeysPanel moreKeysPanel = sDrawingProxy.showMoreKeysKeyboard(key, this);
         if (moreKeysPanel == null) {
             return;
