@@ -24,7 +24,7 @@
         android:key="pref_always_incognito_mode"
         android:title="@string/prefs_force_incognito_mode"
         android:summary="@string/prefs_force_incognito_mode_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     <org.dslul.openboard.inputmethod.latin.settings.SeekBarDialogPreference
         android:key="pref_key_longpress_timeout"

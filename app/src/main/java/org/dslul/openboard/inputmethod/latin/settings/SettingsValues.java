@@ -159,7 +159,7 @@ public class SettingsValues {
         mShowsLanguageSwitchKey = prefs.getBoolean(Settings.PREF_SHOW_LANGUAGE_SWITCH_KEY, false);
         mShowsEmojiKey = prefs.getBoolean(Settings.PREF_SHOW_EMOJI_KEY, false);
         mShowsClipboardKey = prefs.getBoolean(Settings.PREF_SHOW_CLIPBOARD_KEY, false);
-        mUsePersonalizedDicts = prefs.getBoolean(Settings.PREF_KEY_USE_PERSONALIZED_DICTS, true);
+        mUsePersonalizedDicts = prefs.getBoolean(Settings.PREF_KEY_USE_PERSONALIZED_DICTS, false);
         mUseDoubleSpacePeriod = prefs.getBoolean(Settings.PREF_KEY_USE_DOUBLE_SPACE_PERIOD, true)
                 && inputAttributes.mIsGeneralTextInput;
         mBlockPotentiallyOffensive = Settings.readBlockPotentiallyOffensive(prefs, res);
@@ -258,11 +258,11 @@ public class SettingsValues {
     }
 
     public boolean isSuggestionsEnabledPerUserSettings() {
-        return mSuggestionsEnabledPerUserSettings;
+        return false;
     }
 
     public boolean isPersonalizationEnabled() {
-        return mUsePersonalizedDicts;
+        return false;
     }
 
     public boolean isWordSeparator(final int code) {
@@ -312,21 +312,12 @@ public class SettingsValues {
     private static final String SUGGESTIONS_VISIBILITY_HIDE_VALUE_OBSOLETE = "2";
 
     private static boolean readSuggestionsEnabled(final SharedPreferences prefs) {
-        if (prefs.contains(Settings.PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE)) {
-            final boolean alwaysHide = SUGGESTIONS_VISIBILITY_HIDE_VALUE_OBSOLETE.equals(
-                    prefs.getString(Settings.PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE, null));
-            prefs.edit()
-                    .remove(Settings.PREF_SHOW_SUGGESTIONS_SETTING_OBSOLETE)
-                    .putBoolean(Settings.PREF_SHOW_SUGGESTIONS, !alwaysHide)
-                    .apply();
-        }
-        return prefs.getBoolean(Settings.PREF_SHOW_SUGGESTIONS, true);
+        return false;
     }
 
     private static boolean readBigramPredictionEnabled(final SharedPreferences prefs,
                                                        final Resources res) {
-        return prefs.getBoolean(Settings.PREF_BIGRAM_PREDICTIONS, res.getBoolean(
-                R.bool.config_default_next_word_prediction));
+        return false;
     }
 
     private static float readAutoCorrectionThreshold(final Resources res,

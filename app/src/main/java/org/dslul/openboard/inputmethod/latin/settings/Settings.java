@@ -288,7 +288,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     }
 
     public static boolean readAlwaysIncognitoMode(final SharedPreferences prefs) {
-        return prefs.getBoolean(PREF_ALWAYS_INCOGNITO_MODE, false);
+        return prefs.getBoolean(PREF_ALWAYS_INCOGNITO_MODE, true);
     }
 
     public static String readPrefAdditionalSubtypes(final SharedPreferences prefs,
@@ -362,7 +362,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     }
 
     public static boolean readClipboardHistoryEnabled(final SharedPreferences prefs) {
-        return prefs.getBoolean(PREF_ENABLE_CLIPBOARD_HISTORY, true);
+        return prefs.getBoolean(PREF_ENABLE_CLIPBOARD_HISTORY, false);
     }
 
     public static int readClipboardHistoryRetentionTime(final SharedPreferences prefs,
